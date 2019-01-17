@@ -1,0 +1,282 @@
+{
+    "version": 3,
+    "dmapp": "200",
+    "constraints": [
+        {
+            "componentId" : "aaa",
+            "personal" : {
+                "aspect": "16:9",
+                "minSize": {
+                    "width": 800,
+                    "height": 450
+                },
+				"prefSize": {
+					"width": 1920,
+					"height": 1080
+				},
+				"priority": 300,
+				"targetRegions": [
+					"tab1", "tab2"
+				]
+			},
+            "communal" : {
+                "aspect": "16:9",
+				"prefSize": {
+					"width": 1920,
+					"height": 810
+				},
+                "minSize": {
+                    "width": 800,
+                    "height": 450
+                },
+                "priority": 300,
+                "audio": true
+            }
+        },
+        {
+            "componentId" : "bbb",
+            "personal": {
+                "minSize": {
+                    "width": 50,
+                    "height": 50
+                },
+				"prefSize": {
+					"width": 820,
+					"height": 680
+				},
+                "priority": 2,
+                "margin": 10
+            },
+            "communal": {
+                "minSize": {
+                    "width": 300,
+                    "height": 300
+                },
+				"prefSize": {
+					"width": 500,
+					"height": 600
+				},
+                "priority": 5,
+                "margin": 20,
+                "audio": true
+            }
+        },
+        {
+            "componentId" : "ccc",
+            "communal" : {
+                "aspect": "16:9",
+                "minSize": {
+                    "width": 400,
+                    "height": 250
+                },
+				"prefSize": {
+					"width": 480,
+					"height": 270
+				},
+                "margin": 20,
+                "priority": 2,
+                "componentDependency": [ "bbb", "ddd" ]
+            },
+            "personal" : {
+                "aspect": "16:9",
+                "minSize": {
+                    "width": 480,
+                    "height": 270
+                },
+				"prefSize": {
+					"width": 480,
+					"height": 270
+				},
+                "margin": 20,
+                "priority": 2,
+                "componentDependency": [  "bbb" ]
+            }
+        },
+        {
+            "componentId" : "ddd",
+            "personal" : {
+                "minSize": {
+                    "width": 200,
+                    "height": 200
+                },
+				"prefSize": {
+					"width": 960,
+					"height": 540
+				},
+                "priority": 4,
+                "margin": 10
+            },
+            "communal" : {
+                "minSize": {
+                    "width": 500,
+                    "height": 500
+                },
+                "priority": 4,
+                "margin": 10
+            }
+         },
+        {
+            "componentId" : "eee",
+            "personal" : {
+                "aspect": "3:2",
+                "minSize": {
+                    "width": 300,
+                    "height": 200
+                },
+                "prefSize": {
+                    "width": 600,
+                    "height": 400
+                },
+                "priority": 3,
+                "touchInteraction": true,
+                "margin": 10
+            },
+            "communal" : {
+                "aspect": "3:2",
+                "minSize": {
+                    "width": 300,
+                    "height": 200
+                },
+                "priority": 3,
+                "touchInteraction": true,
+                "margin": 10
+            }
+        },
+        {
+            "componentId" : "fff",
+            "personal" : {
+                "aspect": "16:9",
+                "minSize": {
+                    "width": 100,
+                    "height": 100
+                },
+                "priority": 3,
+                "touchInteraction": true
+            },
+            "communal" : {
+                "aspect": "16:9",
+                "minSize": {
+                    "width": 100,
+                    "height": 100
+                },
+                "priority": 3,
+                "touchInteraction": true
+            }
+        },
+        {
+             "componentId" : "ggg",
+             "personal" : {
+                 "minSize": {
+                     "width": 400,
+                     "height": 300
+                 },
+                 "priority": 6,
+                 "margin": 0
+             },
+            "communal" : {
+                "minSize": {
+                    "width": 200,
+                    "height": 300
+                },
+                "priority": 6,
+                "margin": 0
+            }
+        },
+        {
+            "componentId" : "hhh",
+            "personal" : {
+                "minSize": {
+                    "width": 250,
+                    "height": 200
+                },
+                "priority": 2,
+                "margin": 0
+            },
+            "communal" : {
+                "minSize": {
+                    "width": 250,
+                    "height": 200
+                },
+                "priority": 2,
+                "margin": 0
+            }
+        },
+        {
+            "componentId" : "jjj",
+            "personal" : {
+                "minSize": {
+                    "width": 150,
+                    "height": 300
+                },
+                "priority": 2,
+                "margin" : 0
+            },
+            "communal" : {
+                "minSize": {
+                    "width": 150,
+                    "height": 300
+                },
+                "priority": 2,
+                "margin" : 0
+            }
+        },
+        {
+            "componentId" : "kkk",
+            "personal" : {
+                "minSize": {
+                    "width": 200,
+                    "height": 300
+                },
+                "priority": 5,
+                "margin" : 0
+            },
+            "communal" : {
+                "minSize": {
+                    "width": 200,
+                    "height": 300
+                },
+                "priority": 5,
+                "margin" : 0
+            }
+        },
+        {
+             "componentId" : "rrr",
+             "personal" : {
+                 "minSize": {
+                     "width": 350,
+                     "height": 300
+                 },
+                 "priority": 10,
+                 "margin": 0
+             },
+            "communal" : {
+                "minSize": {
+                    "width": 650,
+                    "height": 400
+                },
+                "priority": 10,
+                "margin": 0
+            }
+        },
+        {
+             "componentId" : "mmm",
+             "personal" : {
+                 "minSize": {
+                     "width": 200,
+                     "height": 300
+                 },
+                 "priority": 1,
+                 "margin": 0
+             },
+            "communal" : {
+                "minSize": {
+                    "width": 200,
+                    "height": 100
+                },
+                "priority": 1,
+                "margin": 0
+            }
+        }
+    ],
+    "layoutModel" : "dynamic"
+}

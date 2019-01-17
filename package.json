@@ -1,0 +1,31 @@
+{
+  "name": "layout-service",
+  "version": "1.0.1",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "tslint": "^5.10.0",
+    "typedoc": "^0.6.0",
+    "typescript": "~2.3.4",
+    "typings": "^2.1.1"
+  },
+  "dependencies": {
+    "bluebird": "^3.5.1",
+    "body-parser": "^1.18.3",
+    "commander": "^2.15.1",
+    "compression": "^1.7.2",
+    "consul": "^0.29.0",
+    "express": "^4.16.3",
+    "express-mung": "^0.4.6",
+    "extsprintf": "^1.4.0",
+    "iridium": "^7.2.2",
+    "jsonschema": "^1.2.4",
+    "log4js": "^1.1.1",
+    "monoclock": "^0.2.2",
+    "osprey": "^0.4.1",
+    "request": "^2.87.0",
+    "request-promise": "^4.2.2",
+    "socket.io-client": "^2.1.1",
+    "source-map-support": "^0.5.6"
+  }
+}

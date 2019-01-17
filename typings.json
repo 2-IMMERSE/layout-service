@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "bluebird": "registry:dt/bluebird#3.5.0+20170323165310",
+    "commander": "registry:dt/commander#2.3.0+20161118092844",
+    "consul": "registry:dt/consul#0.23.0+20170202011529",
+    "express": "registry:dt/express#4.0.0+20170118060322",
+    "log4js": "registry:dt/log4js#0.0.0+20160726182927",
+    "request": "registry:dt/request#0.0.0+20170323073920"
+  },
+  "globalDependencies": {
+    "express-mung": "registry:dt/express-mung#0.4.2+20161005184000",
+    "request-promise": "registry:dt/request-promise#4.1.0+20161119044246",
+    "socket.io-client": "registry:dt/socket.io-client#1.4.4+20161116080703",
+    "uuid": "registry:dt/uuid#3.3.0+20160728152600"
+  }
+}

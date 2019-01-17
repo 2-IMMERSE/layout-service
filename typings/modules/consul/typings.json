@@ -1,0 +1,8 @@
+{
+  "resolution": "main",
+  "tree": {
+    "src": "https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/bf557832e7a8a776d4979150ebd9ac826f761d9a/consul/index.d.ts",
+    "raw": "registry:dt/consul#0.23.0+20170202011529",
+    "typings": "https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/bf557832e7a8a776d4979150ebd9ac826f761d9a/consul/index.d.ts"
+  }
+}

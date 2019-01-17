@@ -1,0 +1,284 @@
+{
+	"title": "2ImmersePushMsg",
+	"definitions": {
+		"pushmsg": {
+			"type": "object",
+			"oneOf": [
+				{"$ref": "#/definitions/createmsg"},
+				{"$ref": "#/definitions/updatemsg"},
+				{"$ref": "#/definitions/destroymsg"},
+				{"$ref": "#/definitions/componentpropertiesmsg"}
+			]
+		},
+		"size": {
+			"type": "object",
+			"properties": {
+				"width": {
+					"type": ["number", "string"]
+				},
+				"height": {
+					"type": ["number", "string"]
+				},
+				"mode": {
+					"enum": ["px", "percent"],
+					"description": "Determines whether to interpret width / height as pixels or percentages. If unspecified, default is px"
+				}
+			},
+			"required": ["width", "height"]
+		},
+		"position": {
+			"title": "position",
+			"type": "object",
+			"properties": {
+				"x": {
+					"type": ["number", "string"]
+				},
+				"y": {
+					"type": ["number", "string"]
+				}
+			},
+			"required": ["x", "y"]
+		},
+		"createmsg": {
+			"title": "createmsg",
+			"type": "object",
+				"properties": {
+					"create": {
+						"type": "object",
+						"properties": {
+								"messageId": {
+										"type": "string"
+								},
+								"timestamp": {
+										"type": "integer"
+								},
+								"deviceId": {
+										"type": "string"
+								},
+								"components": {
+										"type": "array",
+										"items": {
+												"type": "object",
+												"properties": {
+														"componentId": {
+																"type": "string"
+														},
+														"DMAppId": {
+																"type": "string"
+														},
+														"contextId": {
+																"type": "string"
+														},
+														"class": {
+																"type": "object"
+														},
+														"params": {
+																"type": "object"
+														},
+														"startTime": {
+																"type": "null"
+														},
+														"stopTime": {
+																"type": "null"
+														},
+														"layout": {
+															"type": "object",
+															"properties": {
+																"instanceId": {
+																	"type": "string"
+																}
+															},
+															"required": ["instanceId"]
+														}
+												},
+												"required": ["componentId", "DMAppId", "contextId", "startTime", "layout"]
+										}
+								}
+						},
+						"required": ["messageId", "timestamp", "deviceId", "components"]
+					}
+				},
+				"required": ["create"]
+		},
+		"updatemsg": {
+			"title": "updatemsg",
+			"type": "object",
+				"properties": {
+					"update": {
+						"type": "object",
+						"properties": {
+							"messageId": {
+								"type": "string"
+							},
+							"timestamp": {
+								"type": "integer"
+							},
+							"deviceId": {
+								"type": "string"
+							},
+							"components": {
+								"type": "array",
+								"items": {
+									"type": "object",
+									"properties": {
+										"componentId": {
+											"type": "string"
+										},
+										"DMAppId": {
+											"type": "string"
+										},
+										"contextId": {
+											"type": "string"
+										},
+										"class": {
+											"type": "object"
+										},
+										"params": {
+											"type": "object"
+										},
+										"startTime": {
+											"type": ["number", "null"]
+										},
+										"stopTime": {
+											"type": ["number", "null"]
+										},
+										"layout": {
+											"type": "object",
+											"properties": {
+												"position": {
+													"$ref": "#/definitions/position"
+												},
+												"size": {
+													"$ref": "#/definitions/size"
+												},
+												"zdepth": {
+													"type": "integer"
+												},
+												"deviceId": {
+													"type": "string"
+												},
+												"regionId": {
+													"type": ["string", "null"]
+												},
+												"instanceId": {
+													"type": "string"
+												}
+											},
+											"required": ["instanceId"]
+										}
+									},
+									"required": ["componentId", "DMAppId", "contextId", "startTime", "layout"]
+								}
+							}
+						},
+						"required": ["messageId", "timestamp", "deviceId", "components"]
+					}
+				},
+				"required": ["update"]
+		},
+		"destroymsg": {
+			"title": "destroymsg",
+			"type": "object",
+				"properties": {
+					"destroy": {
+						"type": "object",
+						"properties": {
+							"messageId": {
+								"type": "string"
+							},
+							"timestamp": {
+								"type": "integer"
+							},
+							"deviceId": {
+								"type": "string"
+							},
+							"components": {
+								"type": "array",
+								"items": {
+									"type": "object",
+									"properties": {
+										"componentId": {
+											"type": "string"
+										},
+										"DMAppId": {
+											"type": "string"
+										},
+										"contextId": {
+											"type": "string"
+										},
+										"stopTime": {
+											"type": "number"
+										}
+									},
+									"required": ["componentId", "DMAppId", "contextId", "stopTime"]
+								}
+							}
+						},
+						"required": ["messageId", "timestamp", "deviceId", "components"]
+					}
+				},
+				"required": ["destroy"]
+		},
+		"componentpropertiesmsg": {
+			"title": "componentpropertiesmsg",
+			"type": "object",
+				"properties": {
+					"componentProperties": {
+						"type": "object",
+						"properties": {
+							"messageId": {
+								"type": "string"
+							},
+							"timestamp": {
+								"type": "integer"
+							},
+							"components": {
+								"type": "array",
+								"items": {
+									"type": "object",
+									"properties": {
+										"componentId": {
+											"type": "string"
+										},
+										"DMAppId": {
+											"type": "string"
+										},
+										"contextId": {
+											"type": "string"
+										},
+										"deviceId": {
+											"type": "string"
+										},
+										"priorities": {
+											"type": "object",
+											"properties": {
+												"communal": {
+													"type": "number"
+												},
+												"personal": {
+													"type": "number"
+												}
+											},
+											"required": ["communal", "personal"]
+										}
+									},
+									"required": ["componentId", "DMAppId", "contextId", "deviceId", "priorities"]
+							
+						}
+					}
+				},
+				"required": ["messageId", "timestamp", "components"]	
+			}
+		},
+		"required": ["componentProperties"]
+		}
+	},
+	"type": "object",
+    "properties": {
+      "message": {
+        "$ref": "#/definitions/pushmsg"
+      }
+		},
+  "additionalProperties": true,
+	"required": ["message"]
+}

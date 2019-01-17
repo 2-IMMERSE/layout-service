@@ -1,0 +1,199 @@
+{
+	"title": "2ImmerseLayoutDocumentV4",
+
+  "definitions": {
+    "constraintdef": {
+      "type": "object",
+    	"properties": {
+        "constraintId": {
+    			"type": "string"
+    		},
+        "personal": {
+    			"$ref": "#/definitions/constraint"
+    		},
+        "communal": {
+    			"$ref": "#/definitions/constraint"
+    		}
+      },
+      "required": ["constraintId", "personal", "communal"]
+    },
+    "constraint":{
+      "type": "object",
+    	"properties": {
+        "aspect": {
+    			"type": "string"
+    		},
+				"prefSize": {
+    			"$ref": "#/definitions/size"
+    		},
+        "minSize": {
+    			"$ref": "#/definitions/size"
+    		},
+				"targetRegions": {
+					"type": "array",
+	        "items": {
+	          "type": "string"
+	        }
+				},
+        "priority": {
+    			"type": "integer"
+    		},
+        "audio": {
+          "type": "boolean"
+        },
+        "video": {
+          "type": "boolean"
+        },
+        "touchInteraction": {
+          "type": "boolean"
+        },
+        "margin": {
+    			"type": "number"
+    		},
+        "anchor": {
+          "type": "array",
+          "items": {
+            "enum": ["top", "bottom", "left", "right", "vcenter"]
+          }
+        },
+        "componentDependency": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+		"componentDeviceDependency": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+        }
+      },
+      "required": ["priority"]
+    },
+    "size": {
+      "type": "object",
+    	"properties": {
+        "width": {
+    			"type": "number"
+    		},
+        "height": {
+    			"type": "number"
+    		},
+				"mode": {
+					"enum": [ "px", "percent", "inches"],
+					"description": "Determines whether to interpret width / height as pixels, inches or percentages. If unspecified, default is px"
+				}
+      },
+      "required": ["width", "height"]
+    },
+    "position": {
+      "type": "object",
+    	"properties": {
+        "x": {
+    			"type": "number"
+    		},
+        "y": {
+    			"type": "number"
+    		}
+      },
+      "required": ["x", "y"]
+    },
+    "template": {
+      "type": "object",
+    	"properties": {
+        "deviceType": {
+    			"type": "string"
+    		},
+        "layout": {
+    			"$ref": "#/definitions/layout"
+    		}
+      },
+      "required": ["deviceType", "layout"]
+    },
+    "layout": {
+      "type": "object",
+      "properties": {
+        "communal": {
+          "type": "object",
+          "properties": {
+            "portrait":  {
+    					"type": "array",
+    					"items": { "$ref": "#/definitions/regionDefn" }
+    				},
+            "landscape":  {
+    					"type": "array",
+    					"items": { "$ref": "#/definitions/regionDefn" }
+    				}
+          },
+          "required": ["portrait", "landscape"]
+        },
+        "personal": {
+          "type": "object",
+          "properties": {
+            "portrait":  {
+    					"type": "array",
+    					"items": { "$ref": "#/definitions/regionDefn" }
+    				},
+            "landscape":  {
+    					"type": "array",
+    					"items": { "$ref": "#/definitions/regionDefn" }
+    				}
+          },
+          "required": ["portrait", "landscape"]
+        }
+      },
+      "required": ["communal", "personal"]
+    },
+    "regionDefn": {
+      "type": "object",
+    	"properties": {
+        "region": {
+    			"$ref": "#/definitions/region"
+    		}
+      },
+      "required": ["region"]
+    },
+    "region": {
+      "type": "object",
+    	"properties": {
+        "id": {
+    			"type": "string"
+    		},
+        "position": {
+    			"$ref": "#/definitions/position"
+    		},
+        "size": {
+    			"$ref": "#/definitions/size"
+    		}
+      },
+      "required": ["id", "position", "size"]
+    }
+  },
+  "type": "object",
+	"properties": {
+		"version":  {
+			"type": "integer",
+      "minimum": 4,
+      "maximum": 4
+		},
+		"dmapp": {
+			"type": "string"
+		},
+		"timelineDocUrl": {
+			"type": "string"
+		},
+		"constraints":  {
+			"type": "array",
+			"items": { "$ref": "#/definitions/constraintdef" }
+		},
+        "layoutModel": {
+                "enum": [ "template", "dynamic", "packer" ]
+        },
+        "templates":  {
+                "type": "array",
+                "items": { "$ref": "#/definitions/template" }
+        }
+	},
+	"required": ["version", "dmapp", "constraints", "layoutModel"]
+}

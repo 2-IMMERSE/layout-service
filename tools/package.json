@@ -1,0 +1,15 @@
+{
+  "name": "benchmark",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "benchmark": "node benchmake.js",
+    "routes": "node check.js"
+  },
+  "devDependencies": {
+    "api-benchmark": "^0.4.2",
+    "osprey": "^0.4.1",
+    "raml-1-parser": "^1.1.26"
+  }
+}

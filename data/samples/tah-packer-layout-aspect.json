@@ -1,0 +1,1307 @@
+{
+    "version": 4,
+    "dmapp": "200",
+    "layoutModel" : "packer",
+    "constraints": [
+        {
+            "componentId" : "TL-01",
+            "personal": {
+                "minSize": {
+                    "width": 100,
+                    "height": 100
+                },
+                "targetRegions": [ "main" ],
+                "anchor": [  "left", "top" ],
+                "priority": 0
+            },
+            "communal": {
+                "minSize": {
+                    "width": 100,
+                    "height": 100
+                },
+                "prefSize": {
+                    "width": 50,
+                    "height": 50,
+                    "mode": "percent"
+                },
+                "targetRegions": [ "stage" ],
+                "anchor": [ "top", "left" ],
+                "priority": 10
+            }
+        },
+        {
+            "componentId" : "BL-01",
+            "personal": {
+                "minSize": {
+                    "width": 100,
+                    "height": 100
+                },
+                "targetRegions": [ "main" ],
+                "anchor": [  "left", "bottom" ],
+                "priority": 0
+            },
+            "communal": {
+                "minSize": {
+                    "width": 100,
+                    "height": 100
+                },
+                "prefSize": {
+                    "width": 50,
+                    "height": 50,
+                    "mode": "percent"
+                },
+                "targetRegions": [ "stage" ],
+                "anchor": [ "bottom", "left" ],
+                "priority": 10
+            }
+        },
+        {
+            "componentId" : "BR-01",
+            "personal": {
+                "minSize": {
+                    "width": 100,
+                    "height": 100
+                },
+                "targetRegions": [ "main" ],
+                "anchor": [  "right", "bottom" ],
+                "priority": 0
+            },
+            "communal": {
+                "minSize": {
+                    "width": 100,
+                    "height": 100
+                },
+                "prefSize": {
+                    "width": 50,
+                    "height": 50,
+                    "mode": "percent"
+                },
+                "targetRegions": [ "stage" ],
+                "anchor": [ "bottom", "right" ],
+                "priority": 10
+            }
+        },
+        {
+            "componentId" : "TR-01",
+            "personal": {
+                "minSize": {
+                    "width": 100,
+                    "height": 100
+                },
+                "targetRegions": [ "main" ],
+                "anchor": [  "top", "right" ],
+                "priority": 0
+            },
+            "communal": {
+                "minSize": {
+                    "width": 100,
+                    "height": 100
+                },
+                "prefSize": {
+                    "width": 50,
+                    "height": 50,
+                    "mode": "percent"
+                },
+                "targetRegions": [ "stage" ],
+                "anchor": [ "top", "right" ],
+                "priority": 10
+            }
+        },
+        {
+            "componentId" : "TL-02",
+            "personal": {
+                "minSize": {
+                    "width": 100,
+                    "height": 100
+                },
+                "targetRegions": [ "main" ],
+                "anchor": [  "left", "top" ],
+                "priority": 0
+            },
+            "communal": {
+                "minSize": {
+                    "width": 100,
+                    "height": 100
+                },
+                "prefSize": {
+                    "width": 50,
+                    "height": 50,
+                    "mode": "percent"
+                },
+                "targetRegions": [ "stage" ],
+                "anchor": [ "top", "left" ],
+                "priority": 20
+            }
+        },
+        {
+            "componentId" : "BL-02",
+            "personal": {
+                "minSize": {
+                    "width": 100,
+                    "height": 100
+                },
+                "targetRegions": [ "main" ],
+                "anchor": [  "left", "bottom" ],
+                "priority": 0
+            },
+            "communal": {
+                "minSize": {
+                    "width": 100,
+                    "height": 100
+                },
+                "prefSize": {
+                    "width": 50,
+                    "height": 50,
+                    "mode": "percent"
+                },
+                "targetRegions": [ "stage" ],
+                "anchor": [ "bottom", "left" ],
+                "priority": 20
+            }
+        },
+        {
+            "componentId" : "BR-02",
+            "personal": {
+                "minSize": {
+                    "width": 100,
+                    "height": 100
+                },
+                "targetRegions": [ "main" ],
+                "anchor": [  "right", "bottom" ],
+                "priority": 0
+            },
+            "communal": {
+                "minSize": {
+                    "width": 100,
+                    "height": 100
+                },
+                "prefSize": {
+                    "width": 50,
+                    "height": 50,
+                    "mode": "percent"
+                },
+                "targetRegions": [ "stage" ],
+                "anchor": [ "bottom", "right" ],
+                "priority": 200
+            }
+        },
+        {
+            "componentId" : "TR-02",
+            "personal": {
+                "minSize": {
+                    "width": 100,
+                    "height": 100
+                },
+                "targetRegions": [ "main" ],
+                "anchor": [  "top", "right" ],
+                "priority": 0
+            },
+            "communal": {
+                "minSize": {
+                    "width": 100,
+                    "height": 100
+                },
+                "prefSize": {
+                    "width": 50,
+                    "height": 50,
+                    "mode": "percent"
+                },
+                "targetRegions": [ "stage" ],
+                "anchor": [ "top", "right" ],
+                "priority": 20
+            }
+        },
+
+        {
+            "componentId" : "T-03",
+            "personal": {
+                "minSize": {
+                    "width": 100,
+                    "height": 100
+                },
+                "targetRegions": [ "main" ],
+                "anchor": [   "top" ],
+                "priority": 0
+            },
+            "communal": {
+                "minSize": {
+                    "width": 100,
+                    "height": 100
+                },
+                "prefSize": {
+                    "width": 50,
+                    "height": 50,
+                    "mode": "percent"
+                },
+                "targetRegions": [ "stage" ],
+                "anchor": [ "top" ],
+                "priority": 10
+            }
+        },
+        {
+            "componentId" : "L-03",
+            "personal": {
+                "minSize": {
+                    "width": 100,
+                    "height": 100
+                },
+                "targetRegions": [ "main" ],
+                "anchor": [  "left" ],
+                "priority": 0
+            },
+            "communal": {
+                "minSize": {
+                    "width": 100,
+                    "height": 100
+                },
+                "prefSize": {
+                    "width": 50,
+                    "height": 50,
+                    "mode": "percent"
+                },
+                "targetRegions": [ "stage" ],
+                "anchor": [  "left" ],
+                "priority": 10
+            }
+        },
+        {
+            "componentId" : "B-03",
+            "personal": {
+                "minSize": {
+                    "width": 100,
+                    "height": 100
+                },
+                "targetRegions": [ "main" ],
+                "anchor": [   "bottom" ],
+                "priority": 0
+            },
+            "communal": {
+                "minSize": {
+                    "width": 100,
+                    "height": 100
+                },
+                "prefSize": {
+                    "width": 50,
+                    "height": 50,
+                    "mode": "percent"
+                },
+                "targetRegions": [ "stage" ],
+                "anchor": [ "bottom" ],
+                "priority": 10
+            }
+        },
+        {
+            "componentId" : "R-03",
+            "personal": {
+                "minSize": {
+                    "width": 100,
+                    "height": 100
+                },
+                "targetRegions": [ "main" ],
+                "anchor": [  "right" ],
+                "priority": 0
+            },
+            "communal": {
+                "minSize": {
+                    "width": 100,
+                    "height": 100
+                },
+                "targetRegions": [ "stage" ],
+                "anchor": [ "right" ],
+                "priority": 10
+            }
+        },
+
+        {
+            "componentId" : "T-04",
+            "personal": {
+                "minSize": {
+                    "width": 100,
+                    "height": 100
+                },
+                "targetRegions": [ "main" ],
+                "anchor": [   "top" ],
+                "priority": 0
+            },
+            "communal": {
+                "minSize": {
+                    "width": 100,
+                    "height": 100
+                },
+                "prefSize": {
+                    "width": 5.21,
+                    "height": 5.21,
+                    "mode": "inches"
+                },
+                "aspect": "1:1",
+                "targetRegions": [ "stage" ],
+                "anchor": [ "top" ],
+                "margin": 0.1,
+                "priority": 40
+            }
+        },
+        {
+            "componentId" : "L-04",
+            "personal": {
+                "minSize": {
+                    "width": 100,
+                    "height": 100
+                },
+                "targetRegions": [ "main" ],
+                "anchor": [  "left" ],
+                "priority": 0
+            },
+            "communal": {
+                "minSize": {
+                    "width": 200,
+                    "height": 200
+                },
+                "prefSize": {
+                    "width": 30,
+                    "height": 30,
+                    "mode": "percent"
+                },
+                "targetRegions": [ "stage" ],
+                "anchor": [  "left" ],
+                "margin": 0,
+                "priority": 40
+            }
+        },
+        {
+            "componentId" : "B-04",
+            "personal": {
+                "minSize": {
+                    "width": 100,
+                    "height": 100
+                },
+                "targetRegions": [ "main" ],
+                "anchor": [   "bottom" ],
+                "priority": 0
+            },
+            "communal": {
+                "minSize": {
+                    "width": 100,
+                    "height": 100
+                },
+                "prefSize": {
+                    "width": 30,
+                    "height": 30,
+                    "mode": "percent"
+                },
+                "targetRegions": [ "stage" ],
+                "anchor": [ "bottom" ],
+                "margin": 0,
+                "priority": 40
+            }
+        },
+        {
+            "componentId" : "R-04",
+            "personal": {
+                "minSize": {
+                    "width": 100,
+                    "height": 100
+                },
+                "targetRegions": [ "main" ],
+                "anchor": [  "right" ],
+                "priority": 0
+            },
+            "communal": {
+                "minSize": {
+                    "width": 100,
+                    "height": 100
+                },
+                "prefSize": {
+                    "width": 30,
+                    "height": 30,
+                    "mode": "percent"
+                },
+                "targetRegions": [ "stage" ],
+                "anchor": [ "right" ],
+                "margin": 0,
+                "priority": 40
+            }
+        },
+
+        {
+            "componentId" : "TRL-05",
+            "personal": {
+                "minSize": {
+                    "width": 100,
+                    "height": 100
+                },
+                "targetRegions": [ "main" ],
+                "anchor": [  "right", "top", "left" ],
+                "priority": 0
+            },
+            "communal": {
+                "minSize": {
+                    "width": 100,
+                    "height": 100
+                },
+
+                "targetRegions": [ "stage" ],
+                "anchor": [ "right", "top", "left" ],
+                "margin": 0,
+                "priority": 50
+            }
+        },
+        {
+            "componentId" : "BRL-05",
+            "personal": {
+                "minSize": {
+                    "width": 100,
+                    "height": 100
+                },
+                "targetRegions": [ "main" ],
+                "anchor": [  "right", "bottom", "left" ],
+                "priority": 0
+            },
+            "communal": {
+                "minSize": {
+                    "width": 100,
+                    "height": 100
+                },
+                "prefSize": {
+                    "width": 100,
+                    "height": 20,
+                    "mode": "percent"
+                },
+                "targetRegions": [ "stage" ],
+                "anchor": [ "right", "bottom", "left" ],
+                "priority": 50
+            }
+        },
+
+
+        {
+            "componentId" : "RTB-05",
+            "personal": {
+                "minSize": {
+                    "width": 100,
+                    "height": 100
+                },
+                "targetRegions": [ "main" ],
+                "anchor": [  "right", "top", "bottom" ],
+                "priority": 0
+            },
+            "communal": {
+                "minSize": {
+                    "width": 100,
+                    "height": 100
+                },
+                "prefSize": {
+                    "width": 50,
+                    "height": 50,
+                    "mode": "percent"
+                },
+                "targetRegions": [ "stage" ],
+                "anchor": [ "right", "top", "bottom" ],
+                "priority": 50
+            }
+        },
+        {
+            "componentId" : "LTB-05",
+            "personal": {
+                "minSize": {
+                    "width": 100,
+                    "height": 100
+                },
+                "targetRegions": [ "main" ],
+                "anchor": [  "top", "bottom", "left" ],
+                "priority": 0
+            },
+            "communal": {
+                "minSize": {
+                    "width": 100,
+                    "height": 100
+                },
+                "prefSize": {
+                    "width": 50,
+                    "height": 50,
+                    "mode": "percent"
+                },
+                "targetRegions": [ "stage" ],
+                "anchor": [ "top", "bottom", "left" ],
+                "priority": 50
+            }
+        },
+
+        {
+            "componentId" : "NA-01",
+            "personal": {
+                "minSize": {
+                    "width": 100,
+                    "height": 100
+                },
+                "targetRegions": [ "main" ],
+                "priority": 0
+            },
+            "communal": {
+                "minSize": {
+                    "width": 100,
+                    "height": 100
+                },
+                "targetRegions": [ "stage" ],
+                "priority": 10
+            }
+        },
+        {
+            "componentId" : "NA-02",
+            "personal": {
+                "minSize": {
+                    "width": 100,
+                    "height": 100
+                },
+                "targetRegions": [ "main" ],
+                "priority": 0
+            },
+            "communal": {
+                "minSize": {
+                    "width": 100,
+                    "height": 100
+                },
+                "prefSize": {
+                    "width": 50,
+                    "height": 50,
+                    "mode": "percent"
+                },
+                "targetRegions": [ "stage" ],
+                "margin": 10,
+                "priority": 10
+            }
+        },
+        {
+            "componentId" : "NA-03",
+            "personal": {
+                "minSize": {
+                    "width": 100,
+                    "height": 100
+                },
+                "targetRegions": [ "main" ],
+                "priority": 0
+            },
+            "communal": {
+                "minSize": {
+                    "width": 100,
+                    "height": 100
+                },
+                "prefSize": {
+                    "width": 50,
+                    "height": 50,
+                    "mode": "percent"
+                },
+                "targetRegions": [ "stage" ],
+                "priority": 10
+            }
+        },
+        {
+            "componentId" : "NA-04",
+            "personal": {
+                "minSize": {
+                    "width": 100,
+                    "height": 100
+                },
+                "targetRegions": [ "main" ],
+                "priority": 0
+            },
+            "communal": {
+                "minSize": {
+                    "width": 100,
+                    "height": 100
+                },
+                "targetRegions": [ "stage" ],
+                "priority": 10
+            }
+        },
+        {
+            "componentId" : "NA-05",
+            "personal": {
+                "minSize": {
+                    "width": 100,
+                    "height": 100
+                },
+                "targetRegions": [ "main" ],
+                "priority": 0
+            },
+            "communal": {
+                "minSize": {
+                    "width": 100,
+                    "height": 100
+                },
+                "targetRegions": [ "stage" ],
+                "priority": 10
+            }
+        },
+        {
+            "componentId" : "NA-06",
+            "personal": {
+                "minSize": {
+                    "width": 100,
+                    "height": 100
+                },
+                "targetRegions": [ "main" ],
+                "priority": 0
+            },
+            "communal": {
+                "minSize": {
+                    "width": 100,
+                    "height": 100
+                },
+                "targetRegions": [ "stage" ],
+                "priority": 10
+            }
+        },
+        {
+          "componentId" : "TL-title",
+          "personal": {
+              "minSize": {
+                  "width": 100,
+                  "height": 100
+              },
+              "targetRegions": [ "main" ],
+              "anchor": [  "left", "top" ],
+              "priority": 10
+          },
+          "communal": {
+              "minSize": {
+                  "width": 100,
+                  "height": 100
+              },
+              "prefSize": {
+                  "width": 50,
+                  "height": 50,
+				  "mode": "percent"
+              },
+              "targetRegions": [ "stage" ],
+              "anchor": [ "top", "left" ],
+              "priority": 17
+          }
+      },
+        {
+            "componentId" : "TL-2-title",
+            "personal": {
+                "minSize": {
+                    "width": 100,
+                    "height": 100
+                },
+                "targetRegions": [ "main" ],
+                "anchor": [  "left", "top" ],
+                "priority": 20
+            },
+            "communal": {
+                "minSize": {
+                    "width": 100,
+                    "height": 100
+                },
+                "prefSize": {
+                    "width": 50,
+                    "height": 50,
+                    "mode": "percent"
+                },
+                "targetRegions": [ "stage" ],
+                "anchor": [ "top", "left" ],
+                "priority": 170
+            }
+        },
+      {
+          "componentId" : "L-cs",
+          "personal": {
+              "minSize": {
+                  "width": 100,
+                  "height": 100
+              },
+              "targetRegions": [ "utility" ],
+              "anchor": [  "left" ],
+              "priority": 10
+          },
+          "communal": {
+              "minSize": {
+                  "width": 100,
+                  "height": 100
+              },
+              "priority": 0
+          }
+      },
+      {
+          "componentId" : "T-text",
+          "personal": {
+              "minSize": {
+                  "width": 100,
+                  "height": 100
+              },
+              "targetRegions": [ "main" ],
+              "anchor": [  "top" ],
+              "priority": 10
+          },
+          "communal": {
+              "minSize": {
+                  "width": 100,
+                  "height": 100
+              },
+              "targetRegions": [ "wings" ],
+              "anchor": [  "top" ],
+              "priority": 13
+          }
+      },
+      {
+          "componentId" : "R-text",
+          "personal": {
+
+              "minSize": {
+                  "width": 100,
+                  "height": 100
+              },
+              "targetRegions": [ "main" ],
+              "anchor": [  "right" ],
+              "priority": 10
+          },
+          "communal": {
+              "minSize": {
+                  "width": 100,
+                  "height": 100
+              },
+              "priority": 0
+          }
+      },
+      {
+          "componentId" : "T-1-A",
+          "personal" : {
+              "minSize": {
+                  "width": 160,
+                  "height": 90
+              },
+              "prefSize": {
+                  "width": 50,
+                  "height": 50,
+                  "mode": "percent"
+              },
+              "targetRegions": [ "main" ],
+              "anchor": [  "top" ],
+              "priority": 19,
+              "audio": true
+          },
+          "communal" : {
+              "minSize": {
+                  "width": 160,
+                  "height": 90
+              },
+              "priority": 10,
+              "aspect": "16:9",
+              "audio": true
+          }
+      },
+      {
+          "componentId" : "T-2-A",
+          "personal" : {
+              "minSize": {
+                  "width": 160,
+                  "height": 90
+              },
+              "priority": 0,
+              "audio": true
+          },
+          "communal" : {
+              "minSize": {
+                  "width": 160,
+                  "height": 90
+              },
+              "aspect": "16:9",
+              "targetRegions": [ "stage" ],
+              "anchor": [  "top" ],
+              "priority": 20,
+              "audio": true
+          }
+      },
+        {
+            "componentId" : "T-3-A",
+            "personal" : {
+                "minSize": {
+                    "width": 160,
+                    "height": 90
+                },
+                "priority": 0,
+                "audio": true
+            },
+            "communal" : {
+                "minSize": {
+                    "width": 320,
+                    "height": 180
+                },
+                "aspect": "16:9",
+                "targetRegions": [ "stage" ],
+                "anchor": [  "top" ],
+                "priority": 20,
+                "audio": true
+            }
+        },
+        {
+            "componentId" : "R-stage-A",
+            "personal" : {
+                "minSize": {
+                    "width": 160,
+                    "height": 90
+                },
+                "priority": 10,
+                "audio": true
+            },
+            "communal" : {
+                "minSize": {
+                    "width": 320,
+                    "height": 180
+                },
+                "aspect": "16:9",
+                "targetRegions": [ "stage" ],
+                "anchor": [  "right" ],
+                "margin": 10,
+                "priority": 20,
+                "audio": true
+            }
+        },
+        {
+          "componentId" : "R-main-A",
+          "personal" : {
+              "minSize": {
+                  "width": 160,
+                  "height": 90
+              },
+              "prefSize": {
+                  "width": 50,
+                  "height": 50,
+                  "mode": "percent"
+              },
+              "targetRegions": [ "main" ],
+              "anchor": [  "right" ],
+              "priority": 19,
+              "audio": true
+          },
+          "communal" : {
+              "minSize": {
+                  "width": 160,
+                  "height": 90
+              },
+              "priority": 10,
+              "audio": true
+          }
+      },
+      {
+          "componentId" : "B-1-stage-A",
+          "personal" : {
+              "minSize": {
+                  "width": 160,
+                  "height": 90
+              },
+              "priority": 10,
+              "audio": true
+          },
+          "communal" : {
+              "minSize": {
+                  "width": 160,
+                  "height": 90
+              },
+              "targetRegions": [ "stage" ],
+              "anchor": [  "bottom" ],
+              "priority": 20,
+              "audio": true
+          }
+      },
+      {
+          "componentId" : "B-1-main-A",
+          "personal" : {
+              "minSize": {
+                  "width": 160,
+                  "height": 100
+              },
+              "prefSize": {
+                  "width": 50,
+                  "height": 50,
+                  "mode": "percent"
+              },
+              "targetRegions": [ "main" ],
+              "anchor": [  "bottom" ],
+              "priority": 19,
+              "audio": true
+          },
+          "communal" : {
+              "minSize": {
+                  "width": 160,
+                  "height": 90
+              },
+              "priority": 10,
+              "audio": true
+          }
+      },
+      {
+          "componentId" : "TR-article",
+          "personal": {
+              "minSize": {
+                  "width": 100,
+                  "height": 100
+              },
+              "targetRegions": [ "main" ],
+              "anchor": [  "right", "top" ],
+              "priority": 10
+          },
+          "communal": {
+              "minSize": {
+                  "width": 100,
+                  "height": 100
+              },
+              "targetRegions": [ "pit" ],
+              "anchor": [  "right", "top" ],
+              "priority": 16
+          }
+      },
+      {
+          "componentId" : "BL-article",
+          "personal": {
+              "minSize": {
+                  "width": 100,
+                  "height": 100
+              },
+              "targetRegions": [ "main" ],
+              "anchor": [  "bottom", "left" ],
+              "priority": 19
+          },
+          "communal": {
+              "minSize": {
+                  "width": 100,
+                  "height": 100
+              },
+              "targetRegions": [ "pit" ],
+              "anchor": [  "bottom", "left" ],
+              "priority": 0
+          }
+      },
+      {
+          "componentId" : "dc-1",
+          "personal": {
+              "minSize": {
+                  "width": 100,
+                  "height": 100
+              },
+              "targetRegions": [ "main" ],
+              "priority": 10
+          },
+          "communal": {
+              "minSize": {
+                  "width": 100,
+                  "height": 100
+              },
+              "targetRegions": [ "pit" ],
+              "priority": 16
+          }
+      },
+      {
+          "componentId" : "dc-2",
+          "personal": {
+              "minSize": {
+                  "width": 100,
+                  "height": 100
+              },
+              "targetRegions": [ "main" ],
+              "priority": 19
+          },
+          "communal": {
+              "minSize": {
+                  "width": 100,
+                  "height": 100
+              },
+              "targetRegions": [ "pit" ],
+              "priority": 0
+          }
+      },
+      {
+          "componentId" : "dc-3",
+          "personal": {
+              "minSize": {
+                  "width": 100,
+                  "height": 100
+              },
+              "targetRegions": [ "main" ],
+              "priority": 10
+          },
+          "communal": {
+              "minSize": {
+                  "width": 100,
+                  "height": 100
+              },
+              "targetRegions": [ "pit" ],
+              "priority": 16
+          }
+      },
+        {
+            "componentId" : "BLR-bar",
+            "personal": {
+                "minSize": {
+                    "width": 100,
+                    "height": 100
+                },
+                "targetRegions": [ "utility" ],
+                "anchor": [  "bottom", "left", "right" ],
+                "priority": 100
+            },
+            "communal": {
+                "minSize": {
+                    "width": 100,
+                    "height": 100
+                },
+                "targetRegions": [ "pit" ],
+                "anchor": [  "bottom", "left", "right" ],
+                "priority": 16
+            }
+        },
+        {
+            "componentId" : "RTB-bar",
+            "personal": {
+                "minSize": {
+                    "width": 100,
+                    "height": 100
+                },
+                "targetRegions": [ "utility" ],
+                "anchor": [  "bottom", "top", "right" ],
+                "priority": 101
+            },
+            "communal": {
+                "minSize": {
+                    "width": 100,
+                    "height": 100
+                },
+                "targetRegions": [ "wings" ],
+                "anchor": [  "bottom", "top", "right" ],
+                "priority": 100
+            }
+        },
+        {
+            "componentId" : "BR-w",
+            "personal": {
+                "minSize": {
+                    "width": 100,
+                    "height": 100
+                },
+                "targetRegions": [ "utility" ],
+                "anchor": [  "bottom", "right" ],
+                "priority": 30
+            },
+            "communal": {
+                "minSize": {
+                    "width": 100,
+                    "height": 100
+                },
+                "targetRegions": [ "wings" ],
+                "anchor": [  "bottom", "right" ],
+                "priority": 16
+            }
+        },
+        {
+            "componentId" : "TL-w",
+            "personal": {
+                "minSize": {
+                    "width": 100,
+                    "height": 100
+                },
+                "targetRegions": [ "utility" ],
+                "anchor": [  "top", "left" ],
+                "priority": 30
+            },
+            "communal": {
+                "minSize": {
+                    "width": 100,
+                    "height": 100
+                },
+                "targetRegions": [ "wings" ],
+                "anchor": [  "top", "left" ],
+                "priority": 16
+            }
+        },
+        {
+          "componentId" : "TL-2-main",
+          "personal": {
+              "minSize": {
+                  "width": 100,
+                  "height": 100
+              },
+              "targetRegions": [ "main" ],
+              "anchor": [  "top", "left" ],
+              "priority": 10
+          },
+          "communal": {
+              "minSize": {
+                  "width": 100,
+                  "height": 100
+              },
+              "priority": 0
+          }
+      },
+      {
+          "componentId" : "BL-3-main",
+          "personal": {
+              "minSize": {
+                  "width": 100,
+                  "height": 100
+              },
+              "targetRegions": [ "main" ],
+              "anchor": [  "bottom", "left" ],
+              "priority": 10
+          },
+          "communal": {
+              "minSize": {
+                  "width": 100,
+                  "height": 100
+              },
+              "priority": 0
+          }
+      },
+      {
+          "componentId" : "BL-v",
+          "personal": {
+              "minSize": {
+                  "width": 100,
+                  "height": 100
+              },
+              "targetRegions": [ "utility" ],
+              "anchor": [  "left","bottom" ],
+              "priority": 10
+          },
+          "communal": {
+              "minSize": {
+                  "width": 100,
+                  "height": 100
+              },
+              "priority": 0
+          }
+      },
+      {
+          "componentId" : "BL-v-2",
+          "personal": {
+              "minSize": {
+                  "width": 100,
+                  "height": 100
+              },
+              "priority": 0
+          },
+          "communal": {
+            "minSize": {
+                "width": 1,
+                "height": 1
+            },
+              "targetRegions": [ "pit" ],
+              "anchor": [  "left", "bottom" ],
+              "priority": 12
+          }
+      },
+      {
+          "componentId" : "BL-v-3",
+              "personal": {
+                  "minSize": {
+                      "width": 100,
+                      "height": 100
+                  },
+                  "priority": 0
+              },
+              "communal": {
+                  "minSize": {
+                      "width": 100,
+                      "height": 100
+              },
+              "targetRegions": [ "stage" ],
+              "anchor": [  "left", "bottom" ],
+              "priority": 11
+          }
+      },
+      {
+          "componentId" : "R-v-2",
+          "personal": {
+              "minSize": {
+                  "width": 100,
+                  "height": 100
+              },
+              "priority": 0
+          },
+          "communal": {
+            "minSize": {
+                "width": 1,
+                "height": 1
+            },
+              "targetRegions": [ "pit" ],
+              "anchor": [  "right" ],
+              "priority": 12
+          }
+      },
+      {
+          "componentId" : "L-view-1",
+          "personal": {
+              "minSize": {
+                  "width": 100,
+                  "height": 100
+              },
+              "priority": 0
+          },
+          "communal": {
+              "minSize": {
+                  "width": 100,
+                  "height": 100
+              },
+              "targetRegions": [ "stage" ],
+              "anchor": [  "left" ],
+              "priority": 11
+          }
+      },
+      {
+          "componentId" : "TRL-menu",
+          "personal": {
+              "minSize": {
+                  "width": 100,
+                  "height": 100
+              },
+              "targetRegions": [ "main" ],
+              "anchor": [  "top", "left", "right" ],
+              "priority": 1000
+          },
+          "communal": {
+              "minSize": {
+                  "width": 100,
+                  "height": 100
+              },
+              "priority": 0
+          }
+      },
+      {
+          "componentId" : "BR-scroll-1",
+          "personal": {
+              "minSize": {
+                  "width": 100,
+                  "height": 100
+              },
+              "priority": 0
+          },
+          "communal": {
+              "minSize": {
+                  "width": 100,
+                  "height": 100
+              },
+              "targetRegions": [ "pit" ],
+              "anchor": [  "bottom", "right" ],
+              "priority": 8
+          }
+        },
+        {
+            "componentId" : "BL-scroll-2",
+            "personal": {
+                "minSize": {
+                    "width": 100,
+                    "height": 100
+                },
+                "priority": 0
+            },
+            "communal": {
+                "minSize": {
+                    "width": 100,
+                    "height": 100
+                },
+                "targetRegions": [ "pit" ],
+                "anchor": [  "bottom", "left" ],
+                "priority": 8
+            }
+      }
+    ]
+}

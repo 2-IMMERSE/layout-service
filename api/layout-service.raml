@@ -1,0 +1,606 @@
+#%RAML 1.0
+#   Copyright 2018 Cisco and/or its affiliates
+#
+#   Licensed under the Apache License, Version 2.0 (the "License");
+#   you may not use this file except in compliance with the License.
+#   You may obtain a copy of the License at
+#
+#   http://www.apache.org/licenses/LICENSE-2.0
+#
+#   Unless required by applicable law or agreed to in writing, software
+#   distributed under the License is distributed on an "AS IS" BASIS,
+#   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+#   See the License for the specific language governing permissions and
+#   limitations under the License.
+title: 2-IMMERSE Layout Service
+version: v4
+mediaType: application/json
+
+types:
+  Device: !include types/device.raml
+  LogicalRegion: !include types/logical-region.raml
+  CapabilityList: !include types/capability-list.raml
+  DevicePostBody: !include types/device-post-body.raml
+  Constraint: !include types/constraint.raml
+  ConstraintSize: !include types/constraint-size.raml
+  ComponentConstraint: !include types/component-constraint.raml
+  Context: !include types/context.raml
+  Clock: !include types/clock.raml
+  DisplayResolution: !include types/display-resolution.raml
+  Layout: !include types/layout.raml
+  PriorityOverride: !include types/priority-override.raml
+  DMAppComponentConfig: !include types/dmapp-component-config.raml
+  DMAppComponentPrefSize: !include types/dmapp-component-prefsize.raml
+  DMAppComponentPriority: !include types/dmapp-component-priority.raml
+  DMAppComponent: !include types/dmapp-component.raml
+  DMAppComponentStatus: !include types/dmapp-component-status.raml
+  DMAppComponentStatusList: !include types/dmapp-component-status-list.raml
+  DMAppComponentConstraint: !include types/dmapp-component-constraint.raml
+  DMAppSpec: !include types/dmapp-spec.raml
+  DMApp: !include types/dmapp.raml
+  DMAppTransaction: !include types/dmapp-transaction.raml
+
+traits:
+  withReqDevice:
+      queryParameters:
+        reqDeviceId:
+          description: requesting device id (user for logging purposes)
+          type: string
+          required: true
+  withDevice:
+      queryParameters:
+        deviceId:
+          description: device id
+          type: string
+          required: true
+        reqDeviceId:
+          description: requesting device id (user for logging purposes)
+          type: string
+          required: true
+
+/context:
+  get:
+    description: get context (returns a context if deviceId is a member of a context)
+    is: [ withDevice ]
+    responses:
+      200:
+        body:
+          type: Context
+      404:
+  post:
+    description: create context
+    is: [ withReqDevice ]
+    responses:
+      201:
+        body:
+          type: Context
+      204:
+  /{contextId}:
+    get:
+      description: get context information (array of deviceIds)
+      is: [ withReqDevice ]
+      responses:
+        200:
+          body:
+            type: Context
+        404:
+    delete:
+      description: destroy context
+      is: [ withReqDevice ]
+      responses:
+        204:
+        404:
+    /config:
+      put:
+        description: configure context options
+        queryParameters:
+          percentCoords:
+            description: return layout co-ordinates as percentages
+            type: boolean
+            required: true
+          reqDeviceId:
+            description: requesting device id (used for logging purposes)
+            type: string
+            required: true
+        responses:
+          204:
+          404:
+    /devices:
+      post:
+        description: join deviceId to contextId using supplied Caps (Capabilities)
+        queryParameters:
+          orientation:
+            description: default orientation (needs to be one of the orientations specified in this device's caps...)
+            type: string
+            required: true
+          deviceId:
+            description: device id
+            type: string
+            required: true
+          reqDeviceId:
+            description: requesting device id (used for logging purposes)
+            type: string
+            required: true
+        body:
+          application/json:
+            type: DevicePostBody
+        responses:
+          201:
+            body:
+              type: Context
+          404:
+      /{deviceId}:
+        get:
+          description: Get Device Info
+          is: [ withReqDevice ]
+          responses:
+            200:
+              body:
+                type: Device
+            204:
+            404:
+        delete:
+          description: leave context (removes deviceId from contextId)
+          is: [ withReqDevice ]
+          responses:
+            200:
+              body:
+                type: Context
+            204:
+            404:
+        /region:
+          get:
+            description: get logical region list
+            is: [ withReqDevice ]
+            responses:
+              200:
+                body:
+                  type: Device
+              404:
+          put:
+            description: put logical region list
+            is: [ withReqDevice ]
+            body:
+              type: array
+              items:
+                type: object
+                properties:
+                  regionId:
+                    type: string
+                    required: true
+                  displayWidth:
+                    type: integer
+                    required: true
+                  displayHeight:
+                    type: integer
+                    required: true
+                  resizable:
+                    type: boolean
+                    required: true
+            responses:
+              204:
+              404:
+          /{regionId}:
+            get:
+              description: get logical region
+              is: [ withReqDevice ]
+              responses:
+                200:
+                  body:
+                    type: LogicalRegion
+                404:
+            delete:
+              description: delete logical region
+              is: [ withReqDevice ]
+              responses:
+                200:
+                  body:
+                    type: Device
+                204:
+                404:
+        /displayResolution:
+          get:
+            description: get device display resolution
+            is: [ withReqDevice ]
+            responses:
+              200:
+                body:
+                  type: DisplayResolution
+              404:
+          put:
+            description: update device display resolution
+            is: [ withReqDevice ]
+            body:
+              application/json:
+                type: DisplayResolution
+            responses:
+              204:
+              404:
+        /orientation:
+          put:
+            description: change device orientation
+            queryParameters:
+              orientation:
+                description: target orientation (needs to be one of the orientations specified in this device's caps...)
+                type: string
+                required: true
+              reqDeviceId:
+                description: requesting device id (used for logging purposes)
+                type: string
+                required: true
+            responses:
+              204:
+              400:
+              404:
+    /dmapp:
+      get:
+        description: get running dmappId's
+        is: [ withReqDevice ]
+        responses:
+          200:
+            body:
+              type: array
+              items:
+                type: string
+      post:
+        description: load DMApp
+        is: [ withReqDevice ]
+        body:
+          application/json:
+            type: DMAppSpec
+        responses:
+          201:
+            body:
+              type: DMApp
+          404:
+      /{dmappId}:
+        get:
+          description: get DMApp info (includes a list of current components for the requesting device)
+          is: [ withReqDevice ]
+          responses:
+            200:
+              body:
+                type: DMApp
+            404:
+        delete:
+          description: unload DMApp
+          is: [ withReqDevice ]
+          responses:
+            204:
+            404:
+        /constraints:
+          get:
+            description: get JSON array of current DMApp constraint objects
+            responses:
+              200:
+                body:
+                  type: [ComponentConstraint]
+              404:
+          post:
+            description: post JSON array of DMApp constraint objects. For each object, if a constraint already exists with that constraintId, it is updated, else it is added. If any of the changed constraints are used by running components, the layout will be re-evaluated.
+            body:
+              application/json:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    constraintId:
+                      description:
+                      type: string
+                      required: true
+                    personal:
+                      description:
+                      type: Constraint
+                      required: true
+                    communal:
+                      description:
+                      type: Constraint
+                      required: true
+            responses:
+              204:
+              404:
+          /{constraintId}:
+            get:
+              description: get specified DMApp constraint
+              responses:
+                200:
+                  body:
+                    type: ComponentConstraint
+                404:
+            post:
+              description: post specified DMApp constraint. If a constraint already exists with that constraintId, it is updated, else it is added. If the changed constraint is used by running components, the layout will be re-evaluated.
+              body:
+                application/json:
+                  type: ComponentConstraint
+              responses:
+                204:
+                404:
+            delete:
+              description: delete specified DMApp constraint. If the constraint is in use by an inited or started component, deletion will fail. Deleting constraintId 'default' will fail.
+              responses:
+                204:
+                405:
+        /actions/clockChanged:
+          post:
+            description: Informs the timeline server of the current mapping of wallclock to presentation clock
+            body:
+              application/json:
+                type: Clock
+            responses:
+              204:
+        /transaction:
+          post:
+            description: API to allow timeline server (or other managing entity) to manage DMApp Component lifecycle. This supports 'batch' transactions containing multiple 'actions' (currently init, start, stop, destroy). Being able to manage multiple components in a single call prevents multiple 'transient' layouts needing to be evaluated. Properties of the supplied "parameters" object on an init action will be added to the component definition provided to clients.
+            body:
+              type: DMAppTransaction
+            responses:
+              201:
+              204:
+        /components:
+          get:
+            description: get DMApp component list
+            is: [ withDevice ]
+            responses:
+              200:
+                body:
+                  type: object
+                  properties:
+                    viable:
+                      type: array
+                      items:
+                        description: As a special case, if `startTime` and `stopTime` are both null/absent, the component shall not be in the running state. If one or more of `startTime` and `stopTime` are present and non-null, the component shall be in the running state whenever the component reference clock is available and the current time position is within the interval formed by [`startTime`, `stopTime`).
+                        type: object
+                        properties:
+                          componentId:
+                            type: string
+                            required: true
+                          constraintId:
+                            type: string
+                            required: false
+                          DMAppId:
+                            type: string
+                            required: true
+                          contextId:
+                            type: string
+                            required: true
+                          config:
+                            type: DMAppComponentConfig
+                            required: false
+                          startTime:
+                            description: Inclusive lower bound of the time in seconds on the component reference clock during which the component shall be in the running state, `null` indicates the lack of a lower bound, see parent description for exceptions.
+                            type: number
+                            required: false
+                          stopTime:
+                            description: Exclusive upper bound of the time in seconds on the component reference clock during which the component shall be in the running state, `null` indicates the lack of an upper bound, see parent description for exceptions.
+                            type: number
+                            required: false
+                          layout:
+                            type: Layout[]
+                            required: false
+                          priorities:
+                            description: Current priorities used to evaluate layout
+                            type: DMAppComponentPriority
+                            required: false
+                          prefSize:
+                            description: Current preferred size used to evaluate layout
+                            type: DMAppComponentPrefSize
+                            required: false
+                          parameters:
+                            type: object
+                            required: false
+              404:
+          /status:
+            post:
+              description: update DMApp component status list
+              is: [ withReqDevice ]
+              body:
+                application/json:
+                  type: DMAppComponentStatusList
+              responses:
+                204:
+                404:
+          /{componentId}:
+            get:
+              description: get DMApp component info
+              is: [ withReqDevice ]
+              responses:
+                200:
+                  body:
+                    type: DMAppComponent
+                404:
+            /actions/setPriority:
+              post:
+                description: setPriority on DMApp component
+                is: [ withReqDevice ]
+                body:
+                  application/json:
+                    type: DMAppComponentPriority
+                responses:
+                  201:
+                    body:
+                      type: DMAppComponent
+                  204:
+                  404:
+            /actions/setPrefSize:
+              post:
+                description: setPrefSize on DMApp component
+                is: [ withReqDevice ]
+                body:
+                  application/json:
+                    type: DMAppComponentPrefSize
+                responses:
+                  201:
+                    body:
+                      type: DMAppComponent
+                  204:
+                  404:
+            /actions/move:
+              post:
+                description: move DMApp component
+                is: [ withReqDevice ]
+                responses:
+                  201:
+                  204:
+            /actions/clone:
+              post:
+                description: clone DMApp component
+                is: [ withReqDevice ]
+                responses:
+                  201:
+                    body:
+                      type: DMAppComponent
+                  204:
+            /actions/status:
+              post:
+                description: update DMApp component status
+                is: [ withReqDevice ]
+                body:
+                  application/json:
+                    type: DMAppComponentStatus
+                responses:
+                  204:
+                  404:
+            /actions/timelineEvent:
+              post:
+                description: trigger timeline event
+                queryParameters:
+                  reqDeviceId:
+                    description: requesting device id (used for logging purposes)
+                    type: string
+                    required: true
+                  eventId:
+                    description: The timeline event that got triggered
+                    type: string
+                    required: true
+                responses:
+                  204:
+                  404:
+        /component:
+          get:
+            description: get DMApp component list
+            is: [ withDevice ]
+            responses:
+              200:
+                body:
+                  type: object
+                  properties:
+                    viable:
+                      type: array
+                      items:
+                        description: As a special case, if `startTime` and `stopTime` are both null/absent, the component shall not be in the running state. If one or more of `startTime` and `stopTime` are present and non-null, the component shall be in the running state whenever the component reference clock is available and the current time position is within the interval formed by [`startTime`, `stopTime`).
+                        type: object
+                        properties:
+                          componentId:
+                            type: string
+                            required: true
+                          constraintId:
+                            type: string
+                            required: false
+                          DMAppId:
+                            type: string
+                            required: true
+                          contextId:
+                            type: string
+                            required: true
+                          config:
+                            type: DMAppComponentConfig
+                            required: false
+                          startTime:
+                            description: Inclusive lower bound of the time in seconds on the component reference clock during which the component shall be in the running state, `null` indicates the lack of a lower bound, see parent description for exceptions.
+                            type: number
+                            required: false
+                          stopTime:
+                            description: Exclusive upper bound of the time in seconds on the component reference clock during which the component shall be in the running state, `null` indicates the lack of an upper bound, see parent description for exceptions.
+                            type: number
+                            required: false
+                          layout:
+                            type: Layout[]
+                            required: false
+                          priorities:
+                            description: Current priorities used to evaluate layout
+                            type: DMAppComponentPriority
+                            required: false
+                          prefSize:
+                            description: Current preferred size used to evaluate layout
+                            type: DMAppComponentPrefSize
+                            required: false
+                          parameters:
+                            type: object
+                            required: false
+              404:
+          /{componentId}:
+            get:
+              description: get DMApp component info
+              is: [ withReqDevice ]
+              responses:
+                200:
+                  body:
+                    type: DMAppComponent
+                404:
+            /actions/setPriority:
+              post:
+                description: setPriority on DMApp component
+                is: [ withReqDevice ]
+                body:
+                  application/json:
+                    type: DMAppComponentPriority
+                responses:
+                  201:
+                    body:
+                      type: DMAppComponent
+                  204:
+                  404:
+            /actions/setPrefSize:
+              post:
+                description: setPrefSize on DMApp component
+                is: [ withReqDevice ]
+                body:
+                  application/json:
+                    type: DMAppComponentPrefSize
+                responses:
+                  201:
+                    body:
+                      type: DMAppComponent
+                  204:
+                  404:
+            /actions/move:
+              post:
+                description: move DMApp component
+                is: [ withReqDevice ]
+                responses:
+                  201:
+                  204:
+            /actions/clone:
+              post:
+                description: clone DMApp component
+                is: [ withReqDevice ]
+                responses:
+                  201:
+                    body:
+                      type: DMAppComponent
+                  204:
+            /actions/status:
+              post:
+                description: update DMApp component status
+                is: [ withReqDevice ]
+                body:
+                  application/json:
+                    type: DMAppComponentStatus
+                responses:
+                  204:
+                  404:
+            /actions/timelineEvent:
+              post:
+                description: trigger timeline event
+                queryParameters:
+                  reqDeviceId:
+                    description: requesting device id (used for logging purposes)
+                    type: string
+                    required: true
+                  eventId:
+                    description: The timeline event that got triggered
+                    type: string
+                    required: true
+                responses:
+                  204:
+                  404:

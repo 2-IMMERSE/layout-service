@@ -1,0 +1,793 @@
+{
+    "version": 3,
+    "dmapp": "200",
+    "layoutModel" : "packer",
+    "constraints": [
+      {
+          "componentId" : "titlecard",
+          "personal": {
+              "minSize": {
+                  "width": 100,
+                  "height": 100
+              },
+              "targetRegions": [ "main" ],
+              "priority": 10
+          },
+          "communal": {
+              "minSize": {
+                  "width": 100,
+                  "height": 100
+              },
+              "prefSize": {
+                  "width": 50,
+                  "height": 80,
+				  "mode": "percent"
+              },
+              "targetRegions": [ "stage" ],
+              "priority": 17
+          }
+      },
+      {
+          "componentId" : "componentswitcher",
+          "personal": {
+              "minSize": {
+                  "width": 100,
+                  "height": 100
+              },
+              "targetRegions": [ "utility" ],
+              "priority": 10
+          },
+          "communal": {
+              "minSize": {
+                  "width": 100,
+                  "height": 100
+              },
+              "priority": 0
+          }
+      },
+      {
+          "componentId" : "textchat",
+          "personal": {
+              "minSize": {
+                  "width": 100,
+                  "height": 100
+              },
+              "targetRegions": [ "main" ],
+              "priority": 10
+          },
+          "communal": {
+              "minSize": {
+                  "width": 100,
+                  "height": 100
+              },
+              "targetRegions": [ "wings" ],
+              "priority": 13
+          }
+      },
+      {
+          "componentId" : "textchat-controls",
+          "personal": {
+
+              "minSize": {
+                  "width": 100,
+                  "height": 100
+              },
+              "targetRegions": [ "main" ],
+              "priority": 10
+          },
+          "communal": {
+              "minSize": {
+                  "width": 100,
+                  "height": 100
+              },
+              "priority": 0
+          }
+      },
+      {
+          "componentId" : "video-pre",
+          "personal" : {
+              "aspect": "16:9",
+              "minSize": {
+                  "width": 160,
+                  "height": 100
+              },
+              "prefSize": {
+                  "width": 50,
+                  "height": 50,
+                  "mode": "percent"
+              },
+              "targetRegions": [ "main" ],
+              "priority": 19,
+              "audio": true
+          },
+          "communal" : {
+              "aspect": "16:9",
+              "minSize": {
+                  "width": 80,
+                  "height": 45
+              },
+              "priority": 0,
+              "audio": true
+          }
+      },
+      {
+          "componentId" : "video-part1",
+          "personal" : {
+              "aspect": "16:9",
+              "minSize": {
+                  "width": 80,
+                  "height": 45
+              },
+              "priority": 0,
+              "audio": true
+          },
+          "communal" : {
+              "aspect": "16:9",
+              "minSize": {
+                  "width": 80,
+                  "height": 45
+              },
+              "targetRegions": [ "stage" ],
+              "priority": 20,
+              "audio": true
+          }
+      },
+      {
+          "componentId" : "video-interval",
+          "personal" : {
+              "aspect": "16:9",
+              "minSize": {
+                  "width": 160,
+                  "height": 100
+              },
+              "prefSize": {
+                  "width": 50,
+                  "height": 50,
+                  "mode": "percent"
+              },
+              "targetRegions": [ "main" ],
+              "priority": 19,
+              "audio": true
+          },
+          "communal" : {
+              "aspect": "16:9",
+              "minSize": {
+                  "width": 80,
+                  "height": 45
+              },
+              "priority": 0,
+              "audio": true
+          }
+      },
+      {
+          "componentId" : "video-part2",
+          "personal" : {
+              "aspect": "16:9",
+              "minSize": {
+                  "width": 80,
+                  "height": 45
+              },
+              "priority": 0,
+              "audio": true
+          },
+          "communal" : {
+              "aspect": "16:9",
+              "minSize": {
+                  "width": 80,
+                  "height": 45
+              },
+              "targetRegions": [ "stage" ],
+              "priority": 20,
+              "audio": true
+          }
+      },
+      {
+          "componentId" : "video-post",
+          "personal" : {
+              "aspect": "16:9",
+              "minSize": {
+                  "width": 160,
+                  "height": 100
+              },
+              "prefSize": {
+                  "width": 50,
+                  "height": 50,
+                  "mode": "percent"
+              },
+              "targetRegions": [ "main" ],
+              "priority": 19,
+              "audio": true
+          },
+          "communal" : {
+              "aspect": "16:9",
+              "minSize": {
+                  "width": 80,
+                  "height": 45
+              },
+              "priority": 0,
+              "audio": true
+          }
+      },
+      {
+          "componentId" : "article-pre",
+          "personal": {
+              "minSize": {
+                  "width": 100,
+                  "height": 100
+              },
+              "targetRegions": [ "main" ],
+              "priority": 10
+          },
+          "communal": {
+              "minSize": {
+                  "width": 100,
+                  "height": 100
+              },
+              "targetRegions": [ "pit" ],
+              "priority": 16
+          }
+      },
+      {
+          "componentId" : "article-part1",
+          "personal": {
+              "minSize": {
+                  "width": 100,
+                  "height": 100
+              },
+              "targetRegions": [ "main" ],
+              "priority": 19
+          },
+          "communal": {
+              "minSize": {
+                  "width": 100,
+                  "height": 100
+              },
+              "targetRegions": [ "pit" ],
+              "priority": 0
+          }
+      },
+      {
+          "componentId" : "article-interval",
+          "personal": {
+              "minSize": {
+                  "width": 100,
+                  "height": 100
+              },
+              "targetRegions": [ "main" ],
+              "priority": 10
+          },
+          "communal": {
+              "minSize": {
+                  "width": 100,
+                  "height": 100
+              },
+              "targetRegions": [ "pit" ],
+              "priority": 16
+          }
+      },
+      {
+          "componentId" : "article-part2",
+          "personal": {
+              "minSize": {
+                  "width": 100,
+                  "height": 100
+              },
+              "targetRegions": [ "main" ],
+              "priority": 19
+          },
+          "communal": {
+              "minSize": {
+                  "width": 100,
+                  "height": 100
+              },
+              "targetRegions": [ "pit" ],
+              "priority": 0
+          }
+      },
+      {
+          "componentId" : "article-post",
+          "personal": {
+              "minSize": {
+                  "width": 100,
+                  "height": 100
+              },
+              "targetRegions": [ "main" ],
+              "priority": 10
+          },
+          "communal": {
+              "minSize": {
+                  "width": 100,
+                  "height": 100
+              },
+              "targetRegions": [ "pit" ],
+              "priority": 16
+          }
+      },
+      {
+          "componentId" : "article-control-pre",
+          "personal": {
+              "minSize": {
+                  "width": 100,
+                  "height": 100
+              },
+              "targetRegions": [ "main" ],
+              "priority": 10
+          },
+          "communal": {
+              "minSize": {
+                  "width": 100,
+                  "height": 100
+              },
+              "priority": 0
+          }
+      },
+      {
+          "componentId" : "article-control-interval",
+          "personal": {
+              "minSize": {
+                  "width": 100,
+                  "height": 100
+              },
+              "targetRegions": [ "main" ],
+              "priority": 10
+          },
+          "communal": {
+              "minSize": {
+                  "width": 100,
+                  "height": 100
+              },
+              "priority": 0
+          }
+      },
+      {
+          "componentId" : "article-control-post",
+          "personal": {
+              "minSize": {
+                  "width": 100,
+                  "height": 100
+              },
+              "targetRegions": [ "main" ],
+              "priority": 10
+          },
+          "communal": {
+              "minSize": {
+                  "width": 100,
+                  "height": 100
+              },
+              "priority": 0
+          }
+      },
+      {
+          "componentId" : "image-pre",
+          "personal": {
+              "minSize": {
+                  "width": 100,
+                  "height": 100
+              },
+              "priority": 0
+          },
+          "communal": {
+              "minSize": {
+                  "width": 100,
+                  "height": 100
+              },
+              "targetRegions": [ "wings" ],
+              "priority": 15
+          }
+      },
+      {
+          "componentId" : "image-pre-1",
+          "personal": {
+              "minSize": {
+                  "width": 100,
+                  "height": 100
+              },
+              "priority": 0
+          },
+          "communal": {
+              "minSize": {
+                  "width": 100,
+                  "height": 100
+              },
+              "targetRegions": [ "wings" ],
+              "priority": 15
+          }
+      },
+      {
+          "componentId" : "image-pre-30",
+          "personal": {
+              "minSize": {
+                  "width": 100,
+                  "height": 100
+              },
+              "priority": 0
+          },
+          "communal": {
+              "minSize": {
+                  "width": 100,
+                  "height": 100
+              },
+              "targetRegions": [ "wings" ],
+              "priority": 15
+          }
+      },
+      {
+          "componentId" : "image-pre-10",
+          "personal": {
+              "minSize": {
+                  "width": 100,
+                  "height": 100
+              },
+              "priority": 0
+          },
+          "communal": {
+              "minSize": {
+                  "width": 100,
+                  "height": 100
+              },
+              "targetRegions": [ "wings" ],
+              "priority": 15
+          }
+      },
+      {
+          "componentId" : "image-pre-5",
+          "personal": {
+              "minSize": {
+                  "width": 100,
+                  "height": 100
+              },
+              "priority": 0
+          },
+          "communal": {
+              "minSize": {
+                  "width": 100,
+                  "height": 100
+              },
+              "targetRegions": [ "wings" ],
+              "priority": 15
+          }
+      },
+      {
+          "componentId" : "image-part1",
+          "personal": {
+              "minSize": {
+                  "width": 100,
+                  "height": 100
+              },
+              "targetRegions": [ "main" ],
+              "priority": 10
+          },
+          "communal": {
+              "minSize": {
+                  "width": 100,
+                  "height": 100
+              },
+              "priority": 0
+          }
+      },
+      {
+          "componentId" : "image-interval",
+          "personal": {
+              "minSize": {
+                  "width": 100,
+                  "height": 100
+              },
+              "priority": 0
+          },
+          "communal": {
+              "minSize": {
+                  "width": 100,
+                  "height": 100
+              },
+              "targetRegions": [ "wings" ],
+              "priority": 15
+          }
+      },
+      {
+          "componentId" : "image-interval-1",
+          "personal": {
+              "minSize": {
+                  "width": 100,
+                  "height": 100
+              },
+              "priority": 0
+          },
+          "communal": {
+              "minSize": {
+                  "width": 100,
+                  "height": 100
+              },
+              "targetRegions": [ "wings" ],
+              "priority": 15
+          }
+      },
+      {
+          "componentId" : "image-interval-30",
+          "personal": {
+              "minSize": {
+                  "width": 100,
+                  "height": 100
+              },
+              "priority": 0
+          },
+          "communal": {
+              "minSize": {
+                  "width": 100,
+                  "height": 100
+              },
+              "targetRegions": [ "wings" ],
+              "priority": 15
+          }
+      },
+      {
+          "componentId" : "image-interval-10",
+          "personal": {
+              "minSize": {
+                  "width": 100,
+                  "height": 100
+              },
+              "priority": 0
+          },
+          "communal": {
+              "minSize": {
+                  "width": 100,
+                  "height": 100
+              },
+              "targetRegions": [ "wings" ],
+              "priority": 15
+          }
+      },
+      {
+          "componentId" : "image-interval-5",
+          "personal": {
+              "minSize": {
+                  "width": 100,
+                  "height": 100
+              },
+              "priority": 0
+          },
+          "communal": {
+              "minSize": {
+                  "width": 100,
+                  "height": 100
+              },
+              "targetRegions": [ "wings" ],
+              "priority": 15
+          }
+      },
+      {
+          "componentId" : "image-part2",
+          "personal": {
+              "minSize": {
+                  "width": 100,
+                  "height": 100
+              },
+              "targetRegions": [ "main" ],
+              "priority": 10
+          },
+          "communal": {
+              "minSize": {
+                  "width": 100,
+                  "height": 100
+              },
+              "priority": 0
+          }
+      },
+      {
+          "componentId" : "image-post",
+          "personal": {
+              "minSize": {
+                  "width": 100,
+                  "height": 100
+              },
+              "priority": 0
+          },
+          "communal": {
+              "minSize": {
+                  "width": 100,
+                  "height": 100
+              },
+              "targetRegions": [ "wings" ],
+              "priority": 15
+          }
+      },
+      {
+          "componentId" : "videochat-pre",
+          "personal": {
+              "minSize": {
+                  "width": 100,
+                  "height": 100
+              },
+              "priority": 0
+          },
+          "communal": {
+            "minSize": {
+                "width": 1,
+                "height": 1
+            },
+              "targetRegions": [ "utility" ],
+              "priority": 12
+          }
+      },
+      {
+          "componentId" : "videochat-view-pre",
+          "personal": {
+              "minSize": {
+                  "width": 100,
+                  "height": 100
+              },
+              "priority": 0
+          },
+          "communal": {
+              "minSize": {
+                  "width": 100,
+                  "height": 100
+              },
+              "targetRegions": [ "stage" ],
+              "priority": 11
+          }
+      },
+      {
+          "componentId" : "videochat-controls-pre",
+          "personal": {
+              "minSize": {
+                  "width": 100,
+                  "height": 100
+              },
+              "targetRegions": [ "main" ],
+              "priority": 10
+          },
+          "communal": {
+              "minSize": {
+                  "width": 100,
+                  "height": 100
+              },
+              "priority": 0
+          }
+      },
+      {
+          "componentId" : "videochat-interval",
+          "personal": {
+              "minSize": {
+                  "width": 100,
+                  "height": 100
+              },
+              "priority": 0
+          },
+          "communal": {
+            "minSize": {
+                "width": 1,
+                "height": 1
+            },
+              "targetRegions": [ "utility" ],
+              "priority": 12
+          }
+      },
+      {
+          "componentId" : "videochat-view-interval",
+          "personal": {
+              "minSize": {
+                  "width": 100,
+                  "height": 100
+              },
+              "priority": 0
+          },
+          "communal": {
+              "minSize": {
+                  "width": 100,
+                  "height": 100
+              },
+              "targetRegions": [ "stage" ],
+              "priority": 11
+          }
+      },
+      {
+          "componentId" : "videochat-controls-interval",
+          "personal": {
+              "minSize": {
+                  "width": 100,
+                  "height": 100
+              },
+              "targetRegions": [ "main" ],
+              "priority": 10
+          },
+          "communal": {
+              "minSize": {
+                  "width": 100,
+                  "height": 100
+              },
+              "priority": 0
+          }
+      },
+      {
+          "componentId" : "videochat-post",
+          "personal": {
+              "minSize": {
+                  "width": 100,
+                  "height": 100
+              },
+              "priority": 0
+          },
+          "communal": {
+            "minSize": {
+                "width": 1,
+                "height": 1
+            },
+              "targetRegions": [ "pit" ],
+              "priority": 12
+          }
+      },
+      {
+          "componentId" : "videochat-view-post",
+          "personal": {
+              "minSize": {
+                  "width": 100,
+                  "height": 100
+              },
+              "priority": 0
+          },
+          "communal": {
+              "minSize": {
+                  "width": 100,
+                  "height": 100
+              },
+              "targetRegions": [ "stage" ],
+              "priority": 11
+          }
+      },
+      {
+          "componentId" : "videochat-controls-post",
+          "personal": {
+              "minSize": {
+                  "width": 100,
+                  "height": 100
+              },
+              "targetRegions": [ "main" ],
+              "priority": 10
+          },
+          "communal": {
+              "minSize": {
+                  "width": 100,
+                  "height": 100
+              },
+              "priority": 0
+          }
+      },
+      {
+          "componentId" : "scroll-text-part1",
+          "personal": {
+              "minSize": {
+                  "width": 100,
+                  "height": 100
+              },
+              "priority": 0
+          },
+          "communal": {
+              "minSize": {
+                  "width": 100,
+                  "height": 100
+              },
+              "targetRegions": [ "pit" ],
+              "priority": 8
+          }
+        },
+        {
+            "componentId" : "scroll-text-part2",
+            "personal": {
+                "minSize": {
+                    "width": 100,
+                    "height": 100
+                },
+                "priority": 0
+            },
+            "communal": {
+                "minSize": {
+                    "width": 100,
+                    "height": 100
+                },
+                "targetRegions": [ "pit" ],
+                "priority": 8
+            }
+      }
+    ]
+}
