@@ -66,7 +66,6 @@ export interface IContextDocument {
   _id?: string;
   devices: IDeviceDocument[];
   config?: IConfigDocument;
-  deviceGroups: IGroupDocument[];
   data?: any;
   timestamp: number;
   updatedAt: Date;
@@ -89,9 +88,6 @@ export class Context extends Iridium.Instance<IContextDocument, Context> impleme
   })
   public config: IConfigDocument;
 
-  @Iridium.Property([groupSchema])
-  public deviceGroups: [IGroupDocument];
-
   @Iridium.Property(Date)
   public updatedAt: Date;
 
@@ -107,7 +103,6 @@ export class Context extends Iridium.Instance<IContextDocument, Context> impleme
     doc.timestamp = Timestamper.getTimestampNS();
     doc.config = doc.config || { percentCoords: false };
     doc.data = doc.data || null;
-    doc.deviceGroups = doc.deviceGroups || [];
   }
 
   public static onSaving(instance: Context, _changes: Iridium.Changes) {
@@ -130,19 +125,30 @@ export class Context extends Iridium.Instance<IContextDocument, Context> impleme
     }, changeset);
   }
 
-  public addDeviceGroup(groupid: string, isCommunal: boolean): Promise<Context> {
-    this.__addDeviceGroup (groupid, isCommunal);
-    return this.save();
-  }
-
-  public getDeviceGroups(): [IGroupDocument] {
-    return this.deviceGroups;
+  public getDeviceGroups(): IGroupDocument[] {
+    const deviceGroups: IGroupDocument[] = 123456[];
+    this.devices.forEach((device) => {
+      const group = deviceGroups.find((elem) => elem.id === device.group);
+      if (isNullOrUndefined(group)) {
+        deviceGroups.push({
+          id: device.group,
+          type: device.caps.communalDevice ? groupType.communal : groupType.personal,
+        });
+      } else {
+        if ((group.type === groupType.personal && device.caps.communalDevice) || (group.type === groupType.communal && !device.caps.communalDevice)) {
+          group.type = groupType.mixed;
+        }
+      }
+    });
+    return deviceGroups;
   }
 
   public addDevice(device: IDeviceDocument): Promise<Context> {
-    this.devices.push(device);
-    this.__addDeviceGroup (device.group, device.caps.communalDevice);
-    return this.save();
+        return this.save({
+            $push: {
+              devices: device as any,
+            },
+        });
   }
 
   public removeDevice(deviceId: string): Promise<Context> {
@@ -248,19 +254,5 @@ export class Context extends Iridium.Instance<IContextDocument, Context> impleme
       deviceGroups: this.deviceGroups,
       timestamp: this.timestamp,
     };
-  }
-
-  private __addDeviceGroup(groupid: string, isCommunal: boolean): void {
-    const group = this.deviceGroups.find((elem) => elem.id === groupid);
-    if (isNullOrUndefined (group)) {
-      this.deviceGroups.push({
-        id: groupid,
-        type: isCommunal ? groupType.communal : groupType.personal,
-      });
-    } else {
-      if ((group.type === groupType.personal && isCommunal) || (group.type === groupType.communal && ! isCommunal)) {
-        group.type = groupType.mixed;
-      }
-    }
   }
 }

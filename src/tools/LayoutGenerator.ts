@@ -193,7 +193,7 @@ export class LayoutGenerator {
     };
 
     /* layout over the set of devices in each device group */
-    const groups: [IGroupDocument] = ctx.getDeviceGroups();
+    const groups: IGroupDocument[] = ctx.getDeviceGroups();
     groups.forEach ((group) => {
         const devicelist = ctx.getGroupDevices(group.id);
         layout = this.runLayout(ctx, dmapps, layout, devicelist, group.id, group.type);
