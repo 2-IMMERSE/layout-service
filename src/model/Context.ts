@@ -126,7 +126,7 @@ export class Context extends Iridium.Instance<IContextDocument, Context> impleme
   }
 
   public getDeviceGroups(): IGroupDocument[] {
-    const deviceGroups: IGroupDocument[] = 123456[];
+    const deviceGroups: IGroupDocument[] = [];
     this.devices.forEach((device) => {
       const group = deviceGroups.find((elem) => elem.id === device.group);
       if (isNullOrUndefined(group)) {
