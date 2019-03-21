@@ -517,7 +517,7 @@ export class LayoutManager {
           // look for component in valueDev - if not found, copy over
           if (_.findWhere(targetDev.components, {componentId: comp.componentId}) === undefined) {
             this.logr.debug(Logger.formatMessage("carrying over inited component: " + comp.componentId + " on device: " + deviceId,
-              {contextID: ctx.id, dmappID: dmapp._id, dmappcID: comp.componentId}));
+              {contextID: ctx._id, dmappID: dmapp._id, dmappcID: comp.componentId}));
             comp.DMAppId = dmapp._id; // this isnt persisted in layout on init...
             targetDev.components.push(comp) ;
           }

@@ -251,7 +251,6 @@ export class Context extends Iridium.Instance<IContextDocument, Context> impleme
       contextId: this._id,
       devices: this.devices,
       config: this.config,
-      deviceGroups: this.deviceGroups,
       timestamp: this.timestamp,
     };
   }
